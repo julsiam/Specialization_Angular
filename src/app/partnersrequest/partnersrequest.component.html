@@ -1,0 +1,69 @@
+<body>
+  <header class="header">
+    <div class="logo">
+      <img class="img" src="../assets/img/logocc.png" alt="">
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Dashboard</span>
+        <a routerLink="/staffhome">Dashboard</a>
+        <a routerLink="/customersdata">Customer</a>
+        <span>Requests</span>
+
+        <a routerLink="/birthdata">Birth Cert</a>
+        <a >Marriage Cert</a>
+        <a href="#">Cenomar</a>
+        <a href="#">Death</a>
+        <span>Partners</span>
+        <a routerLink="/partners">Partners</a>
+        <a routerLink="/partnersrequest" class="active">Requests</a>
+
+
+        <div class="links">
+          <span>Account</span>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <div class="wrapper">
+        <h1>Our Valued Customers</h1>
+      </div>
+
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <th>Company Name</th>
+            <th>Request</th>
+            <th>Place</th>
+            <th>Year</th>
+            <th>Purpose</th>
+            <th>Status</th>
+            <th>Update Status</th>
+
+          </thead>
+        </table>
+      </div>
+
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr style=" border: 1px solid black" *ngFor="let partnersreq of partnersRequests; let i=index">
+              <td>{{partnersreq.company}}</td>
+              <td>{{partnersreq.requests}}</td>
+              <td>{{partnersreq.place}}</td>
+              <td>{{partnersreq.year}}</td>
+              <td>{{partnersreq.purpose}}</td>
+              <td>Pending</td>
+              <td><a href="">Update</a>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

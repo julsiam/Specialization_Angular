@@ -1,0 +1,96 @@
+.navbar {
+ color: gray;
+}
+
+.img {
+  width: 200px;
+}
+
+ul {
+  margin-right: 60px;
+}
+
+.drop{
+  text-decoration: none;
+  color: black;
+}
+
+
+.ng-invalid:not(form) {
+  border-left: 2px solid red;
+}
+
+.ng-valid:not(form) {
+  border-left: 2px solid green;
+}
+
+
+.card {
+  box-shadow: 10px 50px 50px 16px #0000001a;
+  background-color: #eae3d600;
+  padding: 10px;
+  max-width: 500px;
+  /* margin: 10px 0px 0px 500px; */
+  margin-left: 55%;
+}
+
+.logos {
+  border: 4px solid #314964;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+#signup {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+h3 {
+  margin: 20px 50px 0px 0px;
+}
+
+.form-control {
+  background-color: #eae3d600;
+  border: 2px solid #0000000f;
+  ;
+}
+
+.partnerBtn {
+  border: 0;
+  outline: none;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+.subBtn {
+  border: 0;
+  outline: none;
+  padding: 5px;
+  margin: 10px 10px;
+  background: hsla(145, 44%, 37%, 1);
+  width: 35mm;
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+  /* text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.5s ease; */
+  cursor: pointer;
+}
+
+.subBtn:hover,
+.subBtn:focus {
+  background: #1b5932;
+}
+#partnertreg{
+  background: hsla(0, 0%, 96%, 1);
+  background: linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  background: -moz-linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  background: -webkit-linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6F6F6", endColorstr="#D2B137", GradientType=1);
+  height: 100vh;
+}

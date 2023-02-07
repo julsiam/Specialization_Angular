@@ -1,0 +1,164 @@
+<header >
+  <div class="d-flex flex-column flex-md-row align-items-center shadow-sm border-bottom header">
+    <a href="/" class="text-dark text-decoration-none">
+      <!-- logo -->
+      <img class="img" src="../assets/img/logocc.png" alt="">
+
+    </a>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <ul ngbNav #nav="ngbNav"class="nav-tabs" [(activeId)]="active">
+        <li [ngbNavItem]="1">
+          <a routerLink="/partnershome"ngbNavLink>Home</a>
+        </li>
+
+        <li [ngbNavItem]="2" class="active">
+          <a routerLink="/request_form"ngbNavLink>Request</a>
+        </li>
+
+        <li [ngbNavItem]="3">
+          <a (click)="logout($event)"ngbNavLink>Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<div class="" id="rform">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-text">
+          <h5 class="text-center fw-bold">Request Form</h5>
+        </div>
+        <br />
+
+        <form #requestForm="ngForm" (ngSubmit)="certRequest()">
+          <div class="card-text">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-5">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="requestor" class="form-label">Company Name</label>
+                  <input type="text" name="company" class="form-control" id="requestor" placeholder="Company Name"
+                    [(ngModel)]="request.company" />
+                </div>
+              </div>
+
+
+              <div class="col">
+                <div class="mb-5">
+                  <label for="requestor" class="form-label">Request Certificate:</label>
+                  <select name="request" class="form-select" aria-label="multiple select example"
+                    [(ngModel)]="request.requests">
+                    <option selected>Select Cetificate</option>
+                    <option value="birth">Birth Certificate</option>
+                    <option value="marriage">Marriage Certificate</option>
+                    <option value="cenomar">Certificate of No-Marriage</option>
+                    <option value="death">Death Certificate</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="alert alert-danger" [hidden]="!error.requests">
+                {{error.request}}
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="requestor" class="form-label">Details Place:</label>
+                  <select class="form-select" aria-label="multiple select example" name="place"
+                    [(ngModel)]="request.place">
+                    <option selected>Filter Place</option>
+                    <option value="All Places in Cebu">All</option>
+                    <option value="Boljoon Cebu Province">BOLJOON CEBU PROVINCE</option>
+                    <option value="Car-Car Cebu Province">CAR-CAR CEBU PROVINCE</option>
+                    <option value="Toledo Cebu Province">TOLEDO CEBU PROVINCE</option>
+                    <option value="Talisay Cebu Province">TALISAY CEBU PROVINCE</option>
+                    <option value="Talamban Cebu Province">TALAMBAN CEBU PROVINCE</option>
+                    <option value="Lapu-Lapu Cebu Province">LAPU-LAPU CEBU PROVINCE</option>
+                    <option value="Argao Cebu Province">ARGAO CEBU PROVINCE</option>
+                    <option value="Bogo Cebu Province">BOGO CEBU PROVINCE</option>
+                    <option value="Dalaguete Cebu Province">DALAGUETE CEBU PROVINCE</option>
+                    <option value="Minglanilla Cebu Province"> MINGLANILLA CEBU PROVINCE</option>
+                    <option value="Medellin Cebu Province">MEDELLIN CEBU PROVINCE</option>
+                    <option value="Consolacion Cebu Province"> CONSOLACION CEBU PROVINCE</option>
+                    <option value="Danao Cebu Province">DANAO CEBU PROVINCE</option>
+                    <option value="Mandaue Cebu Province">MANDAUE CEBU PROVINCE</option>
+                    <option value="Naga Cebu Province">NAGA CEBU PROVINCE</option>
+                    <option value="Sibonga Cebu Province">SIBONGA CEBU PROVINCE</option>
+                    <option value="San Fernando Cebu Province">SAN FERNANDO CEBU PROVINCE</option>
+                    <option value="Cordova Cebu Province">CORDOVA CEBU PROVINCE</option>
+                    <option value="Alcoy Cebu Province">ALCOY CEBU PROVINCE</option>
+                    <option value="Oslob Cebu Province">OSLOB CEBU PROVINCE</option>
+                    <option value="Santander Cebu Province">SANTANDER CEBU PROVINCE</option>
+                    <option value="Compostela Cebu Province">COMPOSTELA CEBU PROVINCE</option>
+                    <option value=" Bantayan Cebu Province">BANTAYAN CEBU PROVINCE</option>
+                    <option value=" Ginatilan Cebu Province">GINATILAN CEBU PROVINCE</option>
+                    <option value="Alegria Cebu Province">ALEGRIA CEBU PROVINCE</option>
+                    <option value="Catmon Cebu Province">CATMON CEBU PROVINCE</option>
+                    <option value="Balamban Cebu Province">BALAMBAN CEBU PROVINCE</option>
+                    <option value="Moalboal Cebu Province">MOALBOAL CEBU PROVINCE</option>
+                    <option value="Alcantara Cebu Province">ALCANTARA CEBU PROVINCE</option>
+                    <option value="Daan-Bantayan Cebu Province"> DAAN-BANTAYAN CEBU PROVINCE</option>
+                    <option value="Samboan Cebu Province">SAMBOAN CEBU PROVINCE</option>
+                    <option value="Dumanjug Cebu Province">DUMANJUG CEBU PROVINCE</option>
+                    <option value="Pinamungajan Cebu Province"> PINAMUNGAJAN CEBU PROVINCE</option>
+                    <option value="Tabugon Cebu Province">TABUGON CEBU PROVINCE</option>
+                    <option value="Tabuelan Cebu Province">TABUELAN CEBU PROVINCE</option>
+                    <option value="Ronda Cebu Province">RONDA CEBU PROVINCE</option>
+                    <option value="Borbon Cebu Province">BORBON CEBU PROVINCE</option>
+                    <option value="Tudela Cebu Province">TUDELA CEBU PROVINCE</option>
+                    <option value="Bdian Cebu Province">BADIAN CEBU PROVINCE</option>
+                    <option value="Poro Cebu Province">PORO CEBU PROVINCE</option>
+                    <option value="Malabuyoc Cebu Province">MALABUYOC CEBU PROVINCE</option>
+                    <option value="Aloguinsan Cebu Province">ALOGUINSAN CEBU PROVINCE</option>
+                    <option value="Asturias Cebu Province">ASTURIAS CEBU PROVINCE</option>
+                    <option value="Ozamiz Cebu Province">OZAMIZ CEBU PROVINCE</option>
+                    <option value="Sogod Cebu Province">SOGOD CEBU PROVINCE</option>
+                    <option value="Barili Cebu Province">BARILI CEBU PROVINCE</option>
+                    <option value="San Francisco Cebu Province">SAN FRANCISCO CEBU PROVINCE</option>
+                    <option value="Madridejos Cebu Province">MADRIDEJOS CEBU PROVINCE</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="alert alert-danger" [hidden]="!error.place">
+                {{error.place}}
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="year" class="form-label">Year:</label>
+                  <input type="text" name="year" class="form-control" id="requestor" placeholder="Year"
+                    [(ngModel)]="request.year" />
+                </div>
+              </div>
+
+
+              <div class="col">
+                <div class="mb-3">
+                  <label for="year" class="form-label">Purpose</label>
+                  <input type="text" name="purpose" class="form-control" id="requestor" placeholder="Purpose of Request"
+                    [(ngModel)]="request.purpose" />
+                </div>
+              </div>
+
+              <div class="alert alert-danger" [hidden]="!error.purpose">
+                {{error.purpose}}
+              </div>
+            </div>
+
+          </div>
+          <div class="row text-center">
+            <div class="col">
+              <div class="d-grid gap-2 pt-4 d-sm-flex justify-content-sm-center">
+                <button type="submit" class="btn btn-primary btn-rounded px-4 gap-3" [disabled]="!requestForm.valid">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

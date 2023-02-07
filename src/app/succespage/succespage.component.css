@@ -1,0 +1,49 @@
+.navbar {
+ color: gray;
+}
+
+.img {
+  width: 200px;
+}
+
+ul {
+  margin-right: 20px;
+}
+
+
+
+
+.card{
+  margin: 75px 0px 0px 155px;
+  padding: 20px;
+
+}
+
+.back {
+  position: relative;
+  margin: 20px 280px auto;
+}
+
+.backBtn {
+  position: relative;
+  color: rgb(0, 0, 0);
+  width: 35mm;
+  border: none;
+  background-color: #06955745;
+  outline: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.backBtn:hover{
+  background-color: #336431f9;
+  transition: .5s;
+  color: white;
+
+}
+
+.text{
+  margin: 25px;
+}

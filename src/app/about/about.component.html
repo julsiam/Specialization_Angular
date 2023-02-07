@@ -1,0 +1,66 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="" ngbNavLink *ngIf="!loggedIn">Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="/customersignup" ngbNavLink *ngIf="!loggedIn">Signup</a>
+      </li>
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            Signin
+          </button>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <a class="drop" *ngIf="!loggedIn" href="/staffsignin"><button ngbDropdownItem>As Staff</button></a>
+            <a class="drop" *ngIf="!loggedIn" href="/customersignin"><button ngbDropdownItem>As Customer</button></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section id="about">
+<div class="section" >
+  <div class="container" >
+    <div class="title">
+      <h1>About Us</h1>
+    </div>
+    <div class="content">
+      <div class="article">
+        <h3>CCEP.ph is authorized by the Philippine Statistics Authority (PSA) to accept requests
+          for copy issuance of PSA birth certificate (certificate of live birth), marriage certificate
+          (certificate of marriage), death certificate (certificate of death), and Certificate of No Marriage
+          (CENOMAR) and its nationwide delivery. </h3><br>
+        <p>The service comes with the convenience of online and
+          over-the-counter payment options that are accessible to clients and a customer care hotline and email support
+          for
+          information on ordering.
+          We started in 2000 as a call-in facility for clients who need copies of their PSA civil registry
+          documents but are unable to visit a CCEP outlet. The full-service website was launched in 2023, providing
+          online and mobile
+          access to more people
+          who prefer to order their PSA certificates online</p><br><br>
+        <p>PSAHelpline.ph adheres to the rules and protocols set by the PSA and the Data Privacy Commission
+          on the proper handling and delivery of civil registry documents.</p>
+        <div class="button">
+          <a routerLink="/parterregistration">Be Our Partner</a>
+        </div>
+      </div>
+    </div>
+    <div class="image-section">
+      <img class="baby" src="assets/img/PSA3.jpg" alt="">
+      <img src="assets/img/PSA5.png" alt="">
+      <img src="assets/img/PSA.png" alt="">
+    </div>
+  </div>
+</div>
+</section>

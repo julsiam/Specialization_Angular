@@ -1,0 +1,91 @@
+<body>
+  <header class="header">
+    <div class="logo">
+      <img class="img" src="../assets/img/logocc.png" alt="">
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Dashboard</span>
+        <a routerLink="/staffhome">Dashboard</a>
+        <a routerLink="/customersdata">Customer</a>
+        <span>Requests</span>
+
+        <a routerLink="/birthdata">Birth Cert</a>
+        <a routerlink="/marriagedata" class="active">Marriage Cert</a>
+        <a href="#">Cenomar</a>
+        <a href="#">Death</a>
+        <span>Partners</span>
+        <a href="#">Accounts</a>
+        <a href="#">Requests</a>
+
+
+        <div class="links">
+          <span>Account</span>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <div class="wrapper">
+        <h1>Certificate of Marriage Requests</h1>
+      </div>
+
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <th>Code</th>
+            <th>Sex</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Birthdate</th>
+            <th>Place of Birth</th>
+            <th>ID Presented</th>
+            <th>Spouse's First Name</th>
+            <th>Spouse's Middle Name</th>
+            <th>Spouse's Last Name</th>
+            <th>Marriage Date</th>
+            <th>Marriage Place</th>
+            <th>Purpose</th>
+            <th>Legal Proceedings</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Update Status</th>
+          </thead>
+        </table>
+      </div>
+
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr style=" border: 1px solid black" *ngFor="let marriageRecord of marriageRecord; let i=index">
+              <td>{{i +1}}</td>
+              <td>{{marriageRecord.sex}}</td>
+              <td>{{marriageRecord.fname}}</td>
+              <td>{{marriageRecord.mname}}</td>
+              <td>{{marriageRecord.lname}}</td>
+              <td>{{marriageRecord.birthdate}}</td>
+              <td>{{marriageRecord.birthplace}}</td>
+              <td>{{marriageRecord.idtype}}</td>
+              <td>{{marriageRecord.sfirstname}}</td>
+              <td>{{marriageRecord.smiddlename}}</td>
+              <td>{{marriageRecord.slastname}}</td>
+              <td>{{marriageRecord.marriageDate}}</td>
+              <td>{{marriageRecord.marriageplace}}</td>
+              <td>{{marriageRecord.purpose}}</td>
+              <td>{{marriageRecord.legalProceedings}}</td>
+              <td>{{marriageRecord.phone}}</td>
+              <td style="font-weight: 600;">{{marriageRecord.status}}</td>
+              <td> <a href="update_marriage_status/{{marriageRecord.id}}">Update</a> <br> <br>
+                <a href="marriage_preview/{{marriageRecord.id}}">Marriage Preview</a>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,172 @@
+<div class="container">
+  <nav>
+    <img class="img" src="../assets/img/logocc.png" alt="">
+    <div class="side_navbar">
+      <span>Dashboard</span>
+      <a routerLink="/staffhome">Dashboard</a>
+      <a href="#">Customer</a>
+      <span>Requests</span>
+
+      <a routerLink="/birthdata">Birth Cert</a>
+      <a routerLink="/marriagedata" class="active">Marriage Cert</a>
+      <a href="#">Cenomar</a>
+      <a href="#">Death</a>
+      <span>Partners</span>
+      <a href="#">Accounts</a>
+      <a href="#">Requests</a>
+
+
+      <div class="links">
+        <span>Account</span>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form">
+    <div class="tab-content">
+      <div id="signup">
+        <h3><span>Certificate of Marriage</span></h3>
+        <h5>Your Information</h5>
+
+        <form [formGroup]="marriageRecord" novalidate>
+
+          <input hidden readonly name="id" class="form-control" id="id" minlength="2" maxlength="25" type="text"
+            required autocomplete="off" formControlName="id" />
+
+          <div class="field-wrap">
+            <label for="sex" id="sex">
+              Your Sex<span class="req">*</span>
+            </label>
+            <input readonly formControlName="sex" class="form-control" name="sex" id="sex" minlength="2" maxlength="25"
+              name="sex" type="text" required autocomplete="off" formControlName="sex" />
+          </div>
+
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input readonly name="fname" id="First Name" class="form-control" minlength="2" maxlength="25"
+                name="fname" type="text" required autocomplete="off" formControlName="fname" />
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Middle Name<span id="nameError" class="req"></span>
+              </label>
+              <input readonly name="mname" class="form-control" id="Middle Name" minlength="2" maxlength="25"
+                type="text" formControlName="mname" />
+            </div>
+
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input readonly name="lname" class="form-control" id="Last Name" minlength="2" maxlength="25" type="text"
+                required autocomplete="off" formControlName="lname" />
+            </div>
+
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Birthdate<span class="req">*</span>
+            </label>
+            <input readonly name="birthdate" class="form-control" id="Birthdate" type="text" min="1960-12-31"
+              max="2005-10-30" required formControlName="birthdate" autocomplete="off">
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Place of Birth<span class="req">*</span>
+            </label>
+            <input readonly name="birthplace" class="form-control" id="Birthdate" type="text" required
+              formControlName="birthplace" autocomplete="off">
+          </div>
+
+
+
+          <div class="field-wrap">
+            <label for="" id="label-sex">
+              Your Government-Issued ID Type <span class="req">*</span>
+            </label>
+            <input readonly name="idtype" class="form-control" id="idtype" type="text" required formControlName="idtype"
+              autocomplete="off">
+          </div> <br>
+
+
+          <h6>Your Spouse's Name</h6>
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input readonly name="sfirstname" class="form-control" id="Father First Name" minlength="2" maxlength="25"
+                type="text" required autocomplete="off" formControlName="sfirstname" />
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Middle Name<span class="req"></span>
+              </label>
+              <input readonly name="smiddlename" class="form-control" id="Father Middle Name" minlength="2" maxlength="25"
+                type="text" required autocomplete="off" formControlName="smiddlename" />
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input readonly name="slastname" class="form-control" id="Father Last Name" minlength="2" maxlength="25"
+                type="text" required autocomplete="off" formControlName="slastname" />
+            </div>
+          </div> <br>
+
+          <div class="field-wrap">
+            <label>
+              Date of Marriage<span class="req">*</span>
+            </label>
+            <input readonly name="marriageDate" class="form-control" id="marriageDate" type="text" min="1960-12-31"
+              max="2005-10-30" required formControlName="marriageDate" autocomplete="off">
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Place of Marriage<span class="req">*</span>
+            </label>
+            <input readonly name="marriageplace" class="form-control" id="marriageplace" type="text" required
+              formControlName="marriageplace" autocomplete="off">
+          </div>
+
+          <h6>The Purpose of Your Request...</h6>
+          <div class="field-wrap">
+            <input name="purpose" class="form-control" id="Mother Last Name" minlength="2" maxlength="25" type="text"
+              required autocomplete="off" formControlName="purpose" />
+          </div> <br>
+
+          <div class="field-wrap">
+            <h6>Legal Proceedings</h6>
+
+            <input readonly name="legalProceedings" class="form-control" id="Mother Last Name" minlength="2" maxlength="25"
+              type="text" required autocomplete="off" formControlName="legalProceedings" />
+          </div> <br>
+
+          <h6>Additional Information</h6>
+          <div class="field-wrap">
+            <p class="note">Please provide your Mobile Number for the update of your request.</p>
+            <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+            <input readonly type="text" class="form-control" id="phone" pattern="[0-9]{11}" placeholder="9123456789"
+              name="phone" requiredautocomplete="off" required formControlName="phone" />
+          </div>
+
+          <div class="verifyBtn">
+           <a routerLink="/marriagedata"> <button type="submit" class="continueBtn">Close</button></a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,72 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="" ngbNavLink *ngIf="!loggedIn">Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="/customersignup" ngbNavLink *ngIf="!loggedIn">Signup</a>
+      </li>
+
+      <!-- <li [ngbNavItem]="3">
+        <a routerLink="/customersignin" ngbNavLink *ngIf="!loggedIn">Customer Signin</a>
+      </li>
+
+      <li [ngbNavItem]="4">
+        <a routerLink="/staffsignin" ngbNavLink *ngIf="!loggedIn">Staff Signin</a>
+      </li> -->
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            Signin
+          </button>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <a class="drop" *ngIf="!loggedIn" href="/staffsignin"><button ngbDropdownItem>As Staff</button></a>
+            <a class="drop" *ngIf="!loggedIn" href="/customersignin"><button ngbDropdownItem>As Customer</button></a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<div id="homepage" class="row g-0 overflow-hidden flex-md-row h-250 position-relative hero">
+  <div class="col-6 p-4 d-flex flex-column position-static">
+    <div class="font">
+      <h1>CCEP Certificate Online Application</h1>
+    </div>
+    <hr>
+    <div id="my-3" class="container">
+      <p class="caption text-justify">
+
+        Request online for a PSA birth, marriage, death certificate, or CENOMAR through CCEP.
+        It's your fast and convenient way of getting your PSA certificates within days, with
+        numerous payment channels available and customer support channels to assist you every step of the way.
+      </p>
+    </div>
+    <div id="btn" class="container">
+      <a routerLink="/about"><button type="button" class="learnBtn">Learn More!</button></a>
+    </div>
+  </div>
+
+  <div class="col-6 d-lg-block">
+    <img src="../assets/img/landing_img.png" width="85%" alt="" />
+  </div>
+</div>
+
+<footer class="text-center text-lg-start bg-light text-muted">
+
+  <div class="text p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold">Cebu City Easy Passage</a>
+  </div>
+  <!-- Copyright -->
+</footer>

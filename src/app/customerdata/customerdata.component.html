@@ -1,0 +1,62 @@
+<body>
+  <header class="header">
+    <div class="logo">
+      <img class="img" src="../assets/img/logocc.png" alt="">
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Dashboard</span>
+        <a routerLink="/staffhome">Dashboard</a>
+        <a routerLink="/customersdata" class="active">Customer</a>
+        <span>Requests</span>
+
+        <a routerLink="/birthdata">Birth Cert</a>
+        <a >Marriage Cert</a>
+        <a href="#">Cenomar</a>
+        <a href="#">Death</a>
+        <span>Partners</span>
+        <a routerLink="/partnersrequest">Partners</a>
+        <a routerLink="/partnersrequest" >Requests</a>
+
+
+        <div class="links">
+          <span>Account</span>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <div class="wrapper">
+        <h1>Our Valued Customers</h1>
+      </div>
+
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </thead>
+        </table>
+      </div>
+
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr style=" border: 1px solid black" *ngFor="let customerrec of customerRecord; let i=index">
+              <td>{{customerrec.fname}}</td>
+              <td>{{customerrec.lname}}</td>
+              <td>{{customerrec.email}}</td>
+              <td><a href="">Delete</a>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

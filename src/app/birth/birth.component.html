@@ -1,0 +1,372 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="/customerhome" *ngIf="loggedIn" ngbNavLink>Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="#" *ngIf="loggedIn" ngbNavLink>Account</a>
+      </li>
+
+      <li [ngbNavItem]="3">
+        <a href="" (click)="logout($event)" *ngIf="loggedIn" ngbNavLink>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<section>
+  <div class="instruction">
+    <h3 class="intro_title"> Birth Certificate Request</h3>
+    <div class="instruct">
+      <h6 class="intro_title"> Upon your request, we need the information below... </h6>
+      <h6 class="intro_title"><u> Note: Indicate N/A for fields that aren't applied to you!</u></h6>
+      <div class="details">1. Your name, sex, birthday, and valid government-issued ID <br>
+        2. Your birthplace <br>
+        3. Your father's name <br>
+        4. Your mother's name <br>
+        5. Late registration (if applicable) <br>
+        6. The purpose of your request <br>
+        6. Legal proceedings (if applicable) <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="form" id="birthform">
+    <div class="tab-content">
+      <div id="signup">
+        <h1><span>Certificate of Live Birth</span></h1>
+        <h4>Your Information</h4>
+
+        <form (ngSubmit)="birthReg()" #birthForm="ngForm" >
+          <div class="field-wrap">
+            <label for="sex" id="sex">
+              Your Sex<span class="req">*</span>
+            </label>
+            <select [(ngModel)]="birth.sex" name="sex" required autocomplete="off">
+              <option value="">-SEX-</option>
+              <option value="Male">MALE</option>
+              <option value="Female">FEMALE</option>
+            </select>
+          </div>
+
+          <div class="alert alert-danger" [hidden]="!error.sex">
+            {{error.sex}}
+          </div>
+
+          <div class="top-row">
+            <div class="field-wrap">
+              <!-- <div class="alert alert-danger" [hidden]="!error.fname">
+                {{error.fname}}
+              </div> -->
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input name="fname" id="First Name" minlength="2" maxlength="25" name="fname" type="text" required
+                autocomplete="off" [(ngModel)]="birth.fname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.fname">
+              {{error.fname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Middle Name<span id="nameError" class="req"></span>
+              </label>
+              <input name="mname" id="Middle Name" minlength="2" maxlength="25" type="text" [(ngModel)]="birth.mname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.mname">
+              {{error.mname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input name="lname" id="Last Name" minlength="2" maxlength="25" type="text" required autocomplete="off"
+                [(ngModel)]="birth.lname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.lname">
+              {{error.lname}}
+            </div>
+
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Birthdate<span class="req">*</span>
+            </label>
+            <input name="birthdate" id="Birthdate" type="date" min="1960-12-31" max="2005-10-30" required
+              autocomplete="off" [(ngModel)]="birth.birthdate">
+          </div>
+
+          <div class="alert alert-danger" [hidden]="!error.birthdate">
+            {{error.birthdate}}
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Place of Birth<span class="req">*</span>
+            </label>
+            <select name="birthplace" id="Place of Birth" required autocomplete="off" [(ngModel)]="birth.birthplace">
+              <option value="">-Place of Birth-</option>
+              <option value="Boljoon Cebu Province">BOLJOON CEBU PROVINCE</option>
+              <option value="Car-Car Cebu Province">CAR-CAR CEBU PROVINCE</option>
+              <option value="Toledo Cebu Province">TOLEDO CEBU PROVINCE</option>
+              <option value="Talisay Cebu Province">TALISAY CEBU PROVINCE</option>
+              <option value="Talamban Cebu Province">TALAMBAN CEBU PROVINCE</option>
+              <option value="Lapu-Lapu Cebu Province">LAPU-LAPU CEBU PROVINCE</option>
+              <option value="Argao Cebu Province">ARGAO CEBU PROVINCE</option>
+              <option value="Bogo Cebu Province">BOGO CEBU PROVINCE</option>
+              <option value="Dalaguete Cebu Province">DALAGUETE CEBU PROVINCE</option>
+              <option value="Minglanilla Cebu Province"> MINGLANILLA CEBU PROVINCE</option>
+              <option value="Medellin Cebu Province">MEDELLIN CEBU PROVINCE</option>
+              <option value="Consolacion Cebu Province"> CONSOLACION CEBU PROVINCE</option>
+              <option value="Danao Cebu Province">DANAO CEBU PROVINCE</option>
+              <option value="Mandaue Cebu Province">MANDAUE CEBU PROVINCE</option>
+              <option value="Naga Cebu Province">NAGA CEBU PROVINCE</option>
+              <option value="Sibonga Cebu Province">SIBONGA CEBU PROVINCE</option>
+              <option value="San Fernando Cebu Province">SAN FERNANDO CEBU PROVINCE</option>
+              <option value="Cordova Cebu Province">CORDOVA CEBU PROVINCE</option>
+              <option value="Alcoy Cebu Province">ALCOY CEBU PROVINCE</option>
+              <option value="Oslob Cebu Province">OSLOB CEBU PROVINCE</option>
+              <option value="Santander Cebu Province">SANTANDER CEBU PROVINCE</option>
+              <option value="Compostela Cebu Province">COMPOSTELA CEBU PROVINCE</option>
+              <option value=" Bantayan Cebu Province">BANTAYAN CEBU PROVINCE</option>
+              <option value=" Ginatilan Cebu Province">GINATILAN CEBU PROVINCE</option>
+              <option value="Alegria Cebu Province">ALEGRIA CEBU PROVINCE</option>
+              <option value="Catmon Cebu Province">CATMON CEBU PROVINCE</option>
+              <option value="Balamban Cebu Province">BALAMBAN CEBU PROVINCE</option>
+              <option value="Moalboal Cebu Province">MOALBOAL CEBU PROVINCE</option>
+              <option value="Alcantara Cebu Province">ALCANTARA CEBU PROVINCE</option>
+              <option value="Daan-Bantayan Cebu Province"> DAAN-BANTAYAN CEBU PROVINCE</option>
+              <option value="Samboan Cebu Province">SAMBOAN CEBU PROVINCE</option>
+              <option value="Dumanjug Cebu Province">DUMANJUG CEBU PROVINCE</option>
+              <option value="Pinamungajan Cebu Province"> PINAMUNGAJAN CEBU PROVINCE</option>
+              <option value="Tabugon Cebu Province">TABUGON CEBU PROVINCE</option>
+              <option value="Tabuelan Cebu Province">TABUELAN CEBU PROVINCE</option>
+              <option value="Ronda Cebu Province">RONDA CEBU PROVINCE</option>
+              <option value="Borbon Cebu Province">BORBON CEBU PROVINCE</option>
+              <option value="Tudela Cebu Province">TUDELA CEBU PROVINCE</option>
+              <option value="Bdian Cebu Province">BADIAN CEBU PROVINCE</option>
+              <option value="Poro Cebu Province">PORO CEBU PROVINCE</option>
+              <option value="Malabuyoc Cebu Province">MALABUYOC CEBU PROVINCE</option>
+              <option value="Aloguinsan Cebu Province">ALOGUINSAN CEBU PROVINCE</option>
+              <option value="Asturias Cebu Province">ASTURIAS CEBU PROVINCE</option>
+              <option value="Ozamiz Cebu Province">OZAMIZ CEBU PROVINCE</option>
+              <option value="Sogod Cebu Province">SOGOD CEBU PROVINCE</option>
+              <option value="Barili Cebu Province">BARILI CEBU PROVINCE</option>
+              <option value="San Francisco Cebu Province">SAN FRANCISCO CEBU PROVINCE</option>
+              <option value="Madridejos Cebu Province">MADRIDEJOS CEBU PROVINCE</option>
+            </select>
+          </div>
+
+          <div class="alert alert-danger" [hidden]="!error.birthplace">
+            {{error.birthplace}}
+          </div>
+
+          <div class="field-wrap">
+            <label for="" id="label-sex">
+              Your Government-Issued ID Type <span class="req">*</span>
+            </label>
+            <select name="idtype" id="Government Issued ID" required autocomplete="off" [(ngModel)]="birth.idtype">
+              <option value="">-SELECT ID TYPE-</option>
+              <option value="Driver’s License issued by the Land Transportation Office"> Driver’s
+                License
+                issued by the Land Transportation Office
+                (LTO)</option>
+              <option value="Philippine National Police (PNP) ID/Police Clearance"> Philippine
+                National
+                Police (PNP) ID/Police Clearance
+              </option>
+              <option value="Department of Social Welfare and Development (DSWD) Certification/4Ps ID ">
+                Department of Social Welfare and Development (DSWD)
+                Certification/4Ps ID </option>
+              <option value="Barangay ID/Certification with picture and signature"> Barangay
+                ID/Certification with picture and signature </option>
+              <option
+                value="Person with Disability(PWD) ID issued by the National Council on Disability Affairs(NCDA) OR it’s regional counterpart, Office of the Mayor, Office of the Barangay Captain,DSWD Office ">
+                Person with Disability(PWD) ID issued by the National Council on Disability
+                Affairs(NCDA) OR it’s regional counterpart, Office of the Mayor, Office of the
+                Barangay Captain,DSWD Office </option>
+              <option
+                value="IDs issued by National Government Offices (e.g., AFP, DAR, DENR,DOH,DOJ) including Government Owned and Controlled Operations">
+                IDs issued by National Government Offices (e.g., AFP, DAR, DENR,DOH,DOJ)
+                including Government Owned and Controlled Operations</option>
+
+              <option
+                value="IDs issued by the Offices of the Local Chief Executives(Governor, ViceGovernor, Mayor, ViceMayor ">
+                IDs issued by the Offices of the Local Chief Executives(Governor, ViceGovernor,
+                Mayor, ViceMayor </option>
+              <option
+                value="Tax Identification Card (TIN) with a picture and signature issued by the Bureau Internal Revenue">
+                Tax Identification Card (TIN) with a picture and signature issued by the Bureau
+                of Internal Revenue
+              </option>
+              <option
+                value="School/Student ID for currently-enrolled students, 18 years old and above, issued by reputable schools/college/universities recognized by the Department of Education">
+                School/Student ID for currently-enrolled students, 18 years old and above,
+                issued by reputable schools/college/universities recognized by the Department of
+                Education</option>
+              <option value="Barangay ID/Certification with picture and signature"> Barangay
+                ID/Certification with picture and signature </option>
+              <option
+                value="Company IDs issued by private entities or institutions registered with,  supervised or regulated by Bangkong Sentral ng  Pilipinas(BSP), Security Exchange and Commission(SEC)">
+                Company IDs issued by private entities or institutions registered with,
+                supervised or regulated by Bangkong Sentral ng Pilipinas(BSP), Security Exchange
+                and Commission(SEC)</option>
+              <option
+                value="Company IDs issued by private entities or institutions registered with,  supervised or regulated by Bangkong Sentral ng  Pilipinas(BSP), Security Exchange and Commission(SEC)">
+                Social Security System (SSS) Unified Multi-Purpose ID
+              </option>
+            </select>
+          </div>
+
+           <div class="alert alert-danger" [hidden]="!error.idtype">
+            {{error.idtype}}
+          </div>
+
+          <h4>Your Father's Name</h4>
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input name="ffname" id="Father First Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.ffname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.ffname">
+              {{error.ffname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Middle Name<span class="req"></span>
+              </label>
+              <input name="fmname" id="Father Middle Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.fmname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.fmname">
+              {{error.fmname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input name="flname" id="Father Last Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.flname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.flname">
+              {{error.flname}}
+            </div>
+          </div>
+
+          <h4>Your Mother's Maiden Name</h4>
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input name="mfname" id="Mother First Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.mfname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.mfname">
+              {{error.mfname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Middle Name<span class="req"></span>
+              </label>
+              <input name="mmname" id="Mother Middle Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.mmname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.mmname">
+              {{error.mmname}}
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input name="mlname" id="Mother Last Name" minlength="2" maxlength="25" type="text" required
+                autocomplete="off" [(ngModel)]="birth.mlname" />
+            </div>
+
+            <div class="alert alert-danger" [hidden]="!error.mlname">
+              {{error.mlname}}
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <h4>Late Registration</h4>
+            <p class="note">The certificate you are requesting for may not be digitized yet by
+              the PSA if it was
+              registered late. There is a chance that you will receive a Certificate of Negative
+              Intact if you continue.
+            </p>
+            <select name="latereg" id="Late Registration" required autocomplete="off" [(ngModel)]="birth.latereg">
+              <option value=""> -Was the certificate registered late?-</option>
+              <option value="Yes">Yes, it was registered late</option>
+              <option value="No">No, it was registered on-time</option>
+            </select>
+
+            <div class="alert alert-danger" [hidden]="!error.latereg">
+              {{error.latereg}}
+            </div>
+          </div>
+
+          <h4>The Purpose of Your Request...</h4>
+          <div class="field-wrap">
+            <select name="purpose" id="Purpose of Request" required autocomplete="off" [(ngModel)]="birth.purpose">
+              <option value="">-Purpose-</option>
+              <option value="Passport / Travel">Passport / Travel</option>
+              <option value="School Requirement">School Requirement</option>
+              <option value="Local Employment">Local Employment</option>
+              <option value="Foreign Employment">Foreign Employment</option>
+              <option value="Marriage">Marriage</option>
+              <option value="Claims / Benefits / Loans">Claims / Benefits / Loans</option>
+              <option value="Late Registration">Late Registration</option>
+            </select>
+          </div>
+
+          <div class="alert alert-danger" [hidden]="!error.purpose">
+            {{error.purpose}}
+          </div>
+
+          <h4>Additional Information</h4>
+          <div class="field-wrap">
+            <p class="note">Please provide your Mobile Number for the update of your request.</p>
+            <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+            <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="9123456789" name="phone"
+              requiredautocomplete="off" [(ngModel)]="birth.phone" required/>
+          </div>
+
+          <div class="alert alert-danger" [hidden]="!error.phone">
+            {{error.phone}}
+          </div>
+
+          <div class="verifyBtn">
+            <button type="submit" class="continueBtn" [disabled]="!birthForm.valid">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,112 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="" ngbNavLink *ngIf="!loggedIn">Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="/customersignup" ngbNavLink *ngIf="!loggedIn">Signup</a>
+      </li>
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            Signin
+          </button>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <a class="drop" *ngIf="!loggedIn" href="/staffsignin"><button ngbDropdownItem>As Staff</button></a>
+            <a class="drop" *ngIf="!loggedIn" href="/customersignin"><button ngbDropdownItem>As Customer</button></a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <div style="margin-top: 15vh; float: left; margin-left:10vw;">
+    <img src="https://o.remove.bg/downloads/a33f8daa-727a-4bb7-a322-66229662595d/International_cooperation-bro-removebg-preview.png" alt="">
+  </div>
+
+<div class="col-8.5" id="partnertreg">
+  <div class="card">
+    <div id="signup" class="card-headear">
+      <img class="logos" src="../assets/img/logo.png" alt="" />
+      <h3>Be Our Partner
+        <hr>
+      </h3>
+    </div>
+
+    <div class="card-body">
+
+      <form #signupForm="ngForm" (ngSubmit)="registerComp()">
+        <div class="mb-3">
+          <label for="companyname" class="form-label">Company Name</label>
+          <input type="text" class="form-control" id="companyname" name="companyname" [(ngModel)]="partnersForm.companyname" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.companyname">
+          {{error.companyname}}
+        </div>
+
+        <div class="mb-3">
+          <label for="lname" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" name="email" [(ngModel)]="partnersForm.email" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.companyemail">
+          {{error.companyemail}}
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Company Address</label>
+          <input type="email" class="form-control" id="companyaddress" name="companyaddress" [(ngModel)]="partnersForm.companyaddress" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.companyaddress">
+          {{error.companyaddress}}
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Company Website URL</label>
+          <input type="email" class="form-control" id="companyurl" name="companyurl" [(ngModel)]="partnersForm.companyurl" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.companyurl">
+          {{error.companyurl}}
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="partnersForm.password" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.password">
+          {{error.password}}
+        </div>
+
+        <div class="mb-3">
+          <label for="cpassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="partnersForm.cpassword"required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.cpassword">
+          {{error.cpassword}}
+        </div>
+
+        <div class="partnerBtn">
+          <button type="submit" class="btn" [disabled]="!signupForm.valid">REGISTER</button>
+         <a routerLink="/partnersignin"><button type="submit" class="subBtn">LOGIN</button></a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</section>

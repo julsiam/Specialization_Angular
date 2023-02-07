@@ -1,0 +1,64 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="" ngbNavLink *ngIf="!loggedIn">Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="/customersignup" ngbNavLink *ngIf="!loggedIn">Signup</a>
+      </li>
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            Signin
+          </button>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <a class="drop" *ngIf="!loggedIn" href="/staffsignin"><button ngbDropdownItem>As Staff</button></a>
+            <a class="drop" *ngIf="!loggedIn" href="/customersignin"><button ngbDropdownItem>As Customer</button></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="col-8">
+  <div class="card">
+    <div id="signup" class="card-headear">
+      <img class="logos" src="../assets/img/logo.png" alt="" />
+      <h3>Be Our Partner
+        <hr>
+      </h3>
+    </div>
+    <div class="card-body">
+      <form #signinForm="ngForm" (ngSubmit)="signIn()">
+        <div class="alert alert-danger" [hidden]="!error">
+          {{error}}
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password"
+            required>
+        </div>
+
+        <div class="loginbtn">
+          <button type="submit" class="subBtn" [disabled]="!signinForm.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

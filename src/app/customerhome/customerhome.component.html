@@ -1,0 +1,116 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="customerhome" *ngIf="loggedIn" ngbNavLink>Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="#" *ngIf="loggedIn" ngbNavLink>Account</a>
+      </li>
+
+      <li [ngbNavItem]="3">
+        <a (click)="logout($event)" *ngIf="loggedIn" ngbNavLink>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="main" id="main">
+  <header>
+    <section id="services" class="page-contain">
+      <a href="birth_form" class="data-card">
+        <h3><img style="width:120px" src="../assets/img/birth.png" alt=""></h3>
+        <h4>Birth Certificate</h4>
+        <p>PSA Birth Certificate online application around Cebu. Open 24/7. Fast, easy, and
+          secure. With status updates.</p>
+        <span class="link-text">
+          Register
+          <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+              fill="#314964" />
+          </svg>
+        </span>
+      </a>
+
+      <a href="marriage_form" class="data-card">
+        <h3><img style="width:120px" src="../assets/img/marriage.png" alt=""></h3>
+        <h4>Marriage Certificate</h4>
+        <p>Marriage Certificate online application around cebu. Open 24/7. Fast, easy, and
+          secure. With status updates.</p>
+        <span class="link-text">
+          Register
+          <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+              fill="#314964" />
+          </svg>
+        </span>
+      </a>
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/cenomar.png" alt=""></h3>
+        <h4>CENOMAR</h4>
+        <p>CENOMAR online application around cebu. Open 24/7. Fast, easy, and
+          secure. With status updates.</p>
+        <span class="link-text">
+          Register
+          <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+              fill="#314964" />
+          </svg>
+        </span>
+      </a>
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/death.png" alt=""></h3>
+        <h4>Death Certificate</h4>
+        <p>Death Certificate online application around cebu. Open 24/7. Fast, easy, and
+          secure. With status updates.</p>
+        <span class="link-text">
+          Register
+          <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+              fill="#314964" />
+          </svg>
+        </span>
+
+      </a>
+
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/scholarship.png" alt=""></h3>
+        <h4>Scholarship</h4>
+        <p>The governement is offering scholarship for its students. This is a big opportunity for you to
+          avail</p>
+      </a>
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/permit.png" alt=""></h3>
+        <h4>Business permit</h4>
+        <p>Business Permit online application around cebu. Open 24/7. Fast, easy, and
+          secure. With status updates.</p>
+      </a>
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/appointment.png" alt=""></h3>
+        <h4>Appointment</h4>
+        <p>Have an appointment with any of your concerns. Just wait for the confirmation before hand.</p>
+      </a>
+
+      <a class="data-card">
+        <h3><img style="width:120px" src="../assets/img/suggestions.png" alt=""></h3>
+        <h4>Suggestions</h4>
+        <p>Let your words be heard. We are glad to hear from you. What's on your mind?</p>
+      </a>
+
+    </section>
+  </header>
+</div>

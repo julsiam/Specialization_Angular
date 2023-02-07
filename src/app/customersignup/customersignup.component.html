@@ -1,0 +1,111 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!--landing page-->
+    <img class="img" src="../assets/img/logocc.png" alt="">
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a routerLink="" ngbNavLink *ngIf="!loggedIn">Home</a>
+      </li>
+
+      <li [ngbNavItem]="2">
+        <a routerLink="/customersignup" ngbNavLink *ngIf="!loggedIn">Signup</a>
+      </li>
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+            Signin
+          </button>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <a class="drop" *ngIf="!loggedIn" href="/staffsignin"><button ngbDropdownItem>As Staff</button></a>
+            <a class="drop" *ngIf="!loggedIn" href="/customersignin"><button ngbDropdownItem>As Customer</button></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+
+<div style="margin-top: 15vh; float: left; margin-left:10vw;">
+  <img src="https://o.remove.bg/downloads/f8138722-87a1-45e1-8fb8-ba9ce4ead297/Sign_up-cuate-removebg-preview.png" alt="">
+</div>
+
+<!-- <div class="container" id="csignup"> -->
+<div  class="col-8.5 " id="csignup">
+  <div class="card">
+    <div id="signup" class="card-headear">
+      <img class="logos" src="../assets/img/logo.png" alt="" />
+      <h3>Signup Here
+        <hr>
+      </h3>
+    </div>
+    <div class="card-body">
+      <form #signupForm="ngForm" (ngSubmit)="signUp()">
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" name="fname" [(ngModel)]="form.fname" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.fname">
+          {{error.fname}}
+        </div>
+
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="form.lname" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.lname">
+          {{error.lname}}
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.email">
+          {{error.email}}
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.password">
+          {{error.password}}
+        </div>
+
+        <div class="mb-3">
+          <label for="cpassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="form.cpassword"required>
+        </div>
+
+        <div class="alert alert-danger" [hidden]="!error.cpassword">
+          {{error.cpassword}}
+        </div>
+
+          <div class="loginbtn">
+            <button type="submit" class="subBtn" [disabled]="!signupForm.valid">Submit</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+

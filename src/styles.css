@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+ body{
+  font-family: "Poppins", sans-serif;
+  /* background: hsla(0, 0%, 96%, 1);
+  background: linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  background: -moz-linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  background: -webkit-linear-gradient(270deg, hsla(0, 0%, 96%, 1) 43%, hsla(47, 63%, 52%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6F6F6", endColorstr="#D2B137", GradientType=1); */
+
+  /* background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+ }
+
+
+

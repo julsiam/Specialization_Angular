@@ -1,0 +1,123 @@
+body {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.img {
+  width: 200px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px;
+  background: hsla(145, 44%, 37%, 1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2rem 8rem 2rem 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+nav {
+  background: rgb(213, 216, 215);
+  margin-left: -32mm;
+  height: 92vh;
+
+}
+
+.side_navbar {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side_navbar span {
+  color: gray;
+  margin: 1rem 2rem;
+  font-size: 12px;
+}
+
+.side_navbar a {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.links {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.links a {
+  font-size: 13px;
+}
+
+.side_navbar a:hover {
+  background: rgb(235, 235, 235);
+}
+
+.side_navbar .active {
+  background-color: white;
+}
+
+
+.main-body {
+  width: 120%;
+  padding: 10px;
+}
+
+.promo_card {
+  width: 100%;
+  color: black;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 0.5rem 1rem 1rem 3rem;
+}
+
+.promo_card h1,
+.promo_card span,
+button {
+  margin: 10px;
+}
+
+.promo_card button {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.history_lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
